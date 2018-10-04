@@ -15,6 +15,7 @@ import checkModalText from '../support/check/checkModalText';
 import checkNewWindow from '../support/check/checkNewWindow';
 import checkOffset from '../support/check/checkOffset';
 import checkProperty from '../support/check/checkProperty';
+import checkInputField from '../support/check/checkInputField';
 import checkFontProperty from '../support/check/checkFontProperty';
 import checkSelected from '../support/check/checkSelected';
 import checkTitle from '../support/check/checkTitle';
@@ -27,6 +28,7 @@ import isEnabled from '../support/check/isEnabled';
 import isExisting from '../support/check/isExisting';
 import isVisible from '../support/check/isVisible';
 import waitFor from '../support/action/waitFor';
+import waitForSearchBox from '../support/action/waitForSearchBox';
 import waitForVisible from '../support/action/waitForVisible';
 import checkIfElementExists from '../support/lib/checkIfElementExists';
 
@@ -79,7 +81,7 @@ Then(
 );
 
 Then(
-    /^I expect that (button|element) "([^"]*)?"( not)* contains the text "([^"]*)?"$/,
+    /^I expect that (button|element|inputfield) "([^"]*)?"( not)* contains the text "([^"]*)?"$/,
     checkContainsText
 );
 
@@ -111,6 +113,11 @@ Then(
 Then(
     /^I expect that the( css)* attribute "([^"]*)?" from element "([^"]*)?" is( not)* "([^"]*)?"$/,
     checkProperty
+);
+
+Then(
+    /^I expect that the inputfield from element "([^"]*)?" is( not)* "([^"]*)?"$/,
+    checkInputField
 );
 
 Then(
@@ -191,4 +198,14 @@ Then(
 Then(
     /^I expect that a (alertbox|confirmbox|prompt)( not)* contains the text "([^"]*)?"$/,
     checkModalText
+);
+
+Then(
+    /^I wait on searchBox to exist$/,
+    {
+        wrapperOptions: {
+            retry: 3,
+        },
+    },
+    waitForSearchBox
 );

@@ -10,7 +10,7 @@ Scenario: Check title of website after search
     Then I expect that the title is "Zoek huizen en appartementen te koop in Nederland [funda]"
 
 Scenario: Check if the seach element exists
-    Then I expect that element "#content > div.home-search > div.search-block.has-price-range" does exist
+    Then I wait on searchBox to exist
 
 Scenario: Check if the seach bar exists
     Then I expect that element "#autocomplete-input" does exist
