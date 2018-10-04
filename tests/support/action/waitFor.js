@@ -52,6 +52,5 @@ module.exports =
     if (typeof falseState === 'undefined') {
         boolFalseState = false;
     }
-
     browser[command](elem, intMs, boolFalseState);
 };

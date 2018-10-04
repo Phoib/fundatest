@@ -23,7 +23,6 @@ Scenario: I go back to the mainpage and have a previous search
     And I expect that element "#content > div.home-search > div.search-block.has-price-range > form > div.search-block__body > p > a" does exist
     And I expect that element "#content > div.home-search > div.search-block.has-price-range > form > div.search-block__body > p > a" matches the text "Nederland"
 
-
 Scenario: I click on the previous search and it will direct me to Nederland
     When I click on the link "Nederland"
     Then I expect that the title is "Koopwoningen Nederland - Huizen te koop in Nederland [funda]"
