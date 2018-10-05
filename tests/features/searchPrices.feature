@@ -29,10 +29,8 @@ Scenario: I search for impossible searches
     And I press "PageDown"
     And I click on the element "#range-filter-selector-select-filter_koopprijstot"
     And I press "PageUp"
-    And I click on the button "#content > div.home-search > div.search-block.has-price-range > form > div.search-block__body > div > div > button"
     And I pause for 500ms
-    Then I expect that element "#content > form > div.container.search-main > div.search-content > div.search-content-output > div > h1" is visible 
-    And I expect that element "#content > form > div.container.search-main > div.search-content > div.search-content-output > div > h1" matches the text "0 resultaten"
+    Then I expect that element "#content" matches the screenshot "red275k.png"
 
 Scenario: I search for more impossible searches
     When I click on the element "#range-filter-selector-select-filter_koopprijstot"

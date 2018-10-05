@@ -31,6 +31,7 @@ import waitFor from '../support/action/waitFor';
 import waitForSearchBox from '../support/action/waitForSearchBox';
 import waitForVisible from '../support/action/waitForVisible';
 import checkIfElementExists from '../support/lib/checkIfElementExists';
+import matchesScreenshot from '../support/lib/matchesScreenshot';
 
 const { Then } = require('cucumber');
 
@@ -208,4 +209,9 @@ Then(
         },
     },
     waitForSearchBox
+);
+
+Then(
+    /^I expect that element "(.*)" matches the screenshot "(.*)"$/,
+    matchesScreenshot
 );
