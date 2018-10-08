@@ -16,6 +16,7 @@ Scenario: Search in the Netherlands for 2 million
     And I click on the element "#range-filter-selector-select-filter_koopprijstot"
     And I press "PageDown"
     And I press "PageDown"
+    And I press "PageDown"
     And I click on the element "#range-filter-selector-select-filter_koopprijsvan"
     And I click on the button "#content > div.home-search > div.search-block.has-price-range > form > div.search-block__body > div > div > button"
     Then I expect that element "#content > form > div.container.search-main > div.search-content > div.search-content-header > div.applied-filters.is-visible > div > button" is visible

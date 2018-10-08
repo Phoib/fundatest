@@ -33,5 +33,6 @@ Scenario: Click on Huur and search for Beverwijk
 Scenario: I go to the mainpage and see last searches
     And I expect that element "#content > div.home-search > div.search-block.has-price-range > form > div.search-block__body > p > a" does not exist
     Given I click on the link "Huur"
-    And I expect that element "#content > div.home-search > div.search-block.has-price-range > form > div.search-block__body > p > a" does exist
+    And I pause for 500ms
+    Then I expect that element "#content > div.home-search > div.search-block.has-price-range > form > div.search-block__body > p > a" does exist
     And I expect that element "#content > div.home-search > div.search-block.has-price-range > form > div.search-block__body > p > a" matches the text "Gemeente Beverwijk"
